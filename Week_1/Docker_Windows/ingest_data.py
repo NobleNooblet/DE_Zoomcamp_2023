@@ -9,7 +9,7 @@ import wget
 import os
 
 def main(params):
-    parquet_file = params.url #'E:\PythonCourse\DE_Zoomcamp\Week_1\Docker_Windows\yellow_tripdata_2022-01.parquet'
+    parquet_file = params.url
     user = params.user
     password = params.password
     host = params.host
@@ -21,11 +21,11 @@ def main(params):
 
     response = wget.download(parquet_file,'output.parquet')
 
-    df = pd.read_parquet('output.parquet', engine = 'pyarrow') #df = pd.read_parquet('E:\PythonCourse\DE_Zoomcamp\Week_1\Docker_Windows\output.parquet', engine = 'pyarrow')
+    df = pd.read_parquet('output.parquet', engine = 'pyarrow') 
 
     df.head()
 
-    output_file = 'output.csv' #output_file = 'E:\PythonCourse\DE_Zoomcamp/Week_1\Docker_Windows\output.csv'
+    output_file = 'output.csv' 
     df.to_csv(output_file, index = False)
 
 
@@ -59,12 +59,6 @@ def main(params):
 
 
 
-# df = pd.read_parquet(parquet_file, engine = 'pyarrow')
-
-# df.head()
-
-# output_file = 'E:\PythonCourse\DE_Zoomcamp/Week_1\Docker_Windows\yellow_tripdata_2021-01.csv'
-# df.to_csv(output_file, index = False)
 
 
 if __name__ == '__main__':

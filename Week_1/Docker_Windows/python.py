@@ -5,7 +5,7 @@ url = 'https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2022-01.p
 
 response = wget.download(url,'output.parquet')
 
-df = pd.read_parquet('E:\PythonCourse\DE_Zoomcamp\output.parquet', engine = 'pyarrow')
+df = pd.read_parquet('E:\PythonCourse\DE_Zoomcamp_2023\output.parquet', engine = 'pyarrow')
 
 df.head()
 
