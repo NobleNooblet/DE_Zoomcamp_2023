@@ -1,0 +1,11 @@
+Select tip_amount,index, "Zone"
+from(
+select tip_amount,a.index,c."Zone"
+from green_taxi_data a
+inner join taxi_zone_data b
+on a."PULocationID" = b."LocationID"
+inner join taxi_zone_data c
+on a."DOLocationID" = c."LocationID"
+where b."Zone" = 'Astoria') b
+order by tip_amount desc
+limit 1

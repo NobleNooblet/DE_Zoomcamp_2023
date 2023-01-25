@@ -1,0 +1,5 @@
+select count(*)
+from green_taxi_data
+where 
+date(lpep_pickup_datetime) = '2019-01-15'
+and date(lpep_dropoff_datetime) = '2019-01-15'

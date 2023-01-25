@@ -1,0 +1,5 @@
+select date(lpep_pickup_datetime)
+from green_taxi_data
+where trip_distance = 
+(select max(trip_distance)
+from green_taxi_data)

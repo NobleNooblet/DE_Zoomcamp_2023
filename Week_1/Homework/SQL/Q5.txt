@@ -1,0 +1,9 @@
+select count(*) 
+from green_taxi_data
+where date(lpep_pickup_datetime) = '2019-01-01'
+and passenger_count = 2
+union 
+select count(*) 
+from green_taxi_data
+where date(lpep_pickup_datetime) = '2019-01-01'
+and passenger_count = 3
