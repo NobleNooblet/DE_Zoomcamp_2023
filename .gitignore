@@ -4,3 +4,7 @@ Week_1/Docker_Windows/yellow_tripdata_2022-01.parquet
 Week_1/Terraform_and_GCP/.terraform/providers/registry.terraform.io/hashicorp/google/4.50.0/windows_386/terraform-provider-google_v4.50.0_x5.exe
 Week_1/Terraform_and_GCP/Keys/dtc-de-course-375810-d71811661138.json
 Week_1/Terraform_and_GCP/Notes.txt
+Week_2/ny_taxi_postgres_data/
+*.parquet
+*.csv
+*.tmp
