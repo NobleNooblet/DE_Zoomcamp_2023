@@ -21,9 +21,9 @@ def clean(df = pd.DataFrame) -> pd.DataFrame:
     """Fix dtype issues"""
     df['tpep_pickup_datetime'] = pd.to_datetime(df['tpep_pickup_datetime'])
     df['tpep_dropoff_datetime'] = pd.to_datetime(df['tpep_dropoff_datetime'])
-    print(df.head(2))
-    print('Columns: {}'.format(df.dtypes))
-    print('Rows: {}'.format(len(df)))
+    #print(df.head(2))
+    #print('Columns: {}'.format(df.dtypes))
+    #print('Rows: {}'.format(len(df)))
     return df
 
 @task()

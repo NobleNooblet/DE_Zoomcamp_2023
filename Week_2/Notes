@@ -15,6 +15,7 @@ run prefect orion start in terminal
 
  prefect config set PREFECT_API_URL=http://127.0.0.1:4200/api
 
+prefect orion start
 
  in web browser: 
  navigate to http://127.0.0.1:4200/flow-runs
