@@ -19,3 +19,21 @@ prefect orion start
 
  in web browser: 
  navigate to http://127.0.0.1:4200/flow-runs
+
+
+build prefect deployment:
+    prefect deployment build {filename}:flow entry point -n name
+  change parameters in .yaml file
+
+apply prefect:
+  prefect deployment apply etl_parent_flow-deployement.yaml
+
+start prefect agent:
+  prefect agent start -q 'default'
+
+
+Build Docker file
+push docker build
+add docker-container block to prefect
+
+set prefect api
