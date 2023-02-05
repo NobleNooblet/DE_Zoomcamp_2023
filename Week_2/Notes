@@ -37,3 +37,7 @@ push docker build
 add docker-container block to prefect
 
 set prefect api
+
+
+
+prefect deployment build pathInGithub:etl_parent_flow --name githubflow -sb github/zoom --apply

@@ -1,0 +1,67 @@
+###
+### A complete description of a Prefect Deployment for flow 'etl-parent-flow'
+###
+name: githubflow
+description: null
+version: 1f8ff466f53ea4186ec9529d81c02403
+# The work queue that will handle this deployment's runs
+work_queue_name: default
+tags: []
+parameters: {}
+schedule: null
+infra_overrides: {}
+
+###
+### DO NOT EDIT BELOW THIS LINE
+###
+flow_name: etl-parent-flow
+manifest_path: null
+infrastructure:
+  type: process
+  env: {}
+  labels: {}
+  name: null
+  command: null
+  stream_output: true
+  working_dir: null
+  _block_document_id: 564cf269-c270-4240-a611-0dc87674a865
+  _block_document_name: anonymous-1530b888-7aa2-4865-ad8c-d1f504c4bb4a
+  _is_anonymous: true
+  block_type_slug: process
+  _block_type_slug: process
+storage:
+  repository: https://github.com/NobleNooblet/DE_Zoomcamp_2023.git
+  reference: null
+  access_token: null
+  _block_document_id: a647c406-aa4b-4ef6-9ce0-1d735ef404b4
+  _block_document_name: zoom
+  _is_anonymous: false
+  block_type_slug: github
+  _block_type_slug: github
+path: ''
+entrypoint: Week_2\Homework\flows\parameterized_flow.py:etl_parent_flow
+parameter_openapi_schema:
+  title: Parameters
+  type: object
+  properties:
+    months:
+      title: months
+      default:
+      - 1
+      - 2
+      position: 0
+      type: array
+      items:
+        type: integer
+    year:
+      title: year
+      default: 2021
+      position: 1
+      type: integer
+    color:
+      title: color
+      default: yellow
+      position: 2
+      type: string
+  required: null
+  definitions: null
