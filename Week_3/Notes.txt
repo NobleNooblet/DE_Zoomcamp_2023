@@ -1,0 +1,21 @@
+Create or replace external table `nytaxi1.external_yellow_tripdata`
+Options(
+  format = 'PARQUET',
+  uris=['gs://dtc_data_lake_dtc-de-course-375810/data/yellow/yellow_tripdata_*']
+);
+
+Partitioning:
+    Create or replace table xyz
+    Partiion by 
+        DATE(column) as
+    select * from `nytaxi1.external_yellow_tripdata`
+
+Can cluster data within a partition together:
+create or replace table abc
+partition by date()
+cluster by .... as
+Select * from table
+
+cluster improves filter queries and aggregation queries
+
+dont cluster or partition on tables with low volumes

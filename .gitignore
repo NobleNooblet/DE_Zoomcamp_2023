@@ -8,3 +8,5 @@ Week_2/ny_taxi_postgres_data/
 *.parquet
 *.csv
 *.tmp
+Week_3/Homework/data/
+homework_hash.py
