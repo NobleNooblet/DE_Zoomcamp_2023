@@ -10,3 +10,9 @@ Week_2/ny_taxi_postgres_data/
 *.tmp
 Week_3/Homework/data/
 homework_hash.py
+
+# Default .gitignore content added by dbt Cloud
+target/
+dbt_packages/
+logs/
+# end dbt Cloud content
