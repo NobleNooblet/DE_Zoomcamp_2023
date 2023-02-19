@@ -24,8 +24,10 @@ def fetch(dataset_url: str) -> pd.DataFrame:
 @task(log_prints=True)
 def clean(df = pd.DataFrame) -> pd.DataFrame:
     """Fix dtype issues"""
-    df['lpep_dropoff_datetime'] = pd.to_datetime(df['lpep_dropoff_datetime'])
-    df['lpep_pickup_datetime'] = pd.to_datetime(df['lpep_pickup_datetime'])
+    df['tpep_dropoff_datetime'] = pd.to_datetime(df['tpep_dropoff_datetime'])
+    df['tpep_pickup_datetime'] = pd.to_datetime(df['tpep_pickup_datetime'])
+    df = df.convert_dtypes()
+    print(df.dtypes)
     #print(df.head(2))
     #print('Columns: {}'.format(df.dtypes))
     #print('Rows: {}'.format(len(df)))
@@ -62,15 +64,16 @@ def etl_web_to_gcs(year: int, month: int, color: str) -> None:
 
 @flow()
 def etl_parent_flow(
-    months: list[int] = [1,2,3,4,5,6,7,8,9,10,11,12], year: int = 2020, color: str = 'green'):
+    months: list[int] = [1,2,3,4,5,6,7,8,9,10,11,12], years: list[int] = [2019,2020], color: str = 'yellow'):
 
-    for month in months:
-        print('Year: {}, Month: {}'.format(year,month))
-        etl_web_to_gcs(year,month,color)
+    for year in years:
+        for month in months:
+            print('Year: {}, Month: {}'.format(year,month))
+            etl_web_to_gcs(year,month,color)
 
 if __name__ == '__main__':
-    color = 'green'
+    color = 'yellow'
     months = [1,2,3,4,5,6,7,8,9,10,11,12]
-    year = 2020
-    etl_parent_flow(months,year,color)
+    years = [2019,2020]
+    etl_parent_flow(months,years,color)
 
