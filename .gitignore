@@ -6,7 +6,6 @@ Week_1/Terraform_and_GCP/Keys/dtc-de-course-375810-d71811661138.json
 Week_1/Terraform_and_GCP/Notes.txt
 Week_2/ny_taxi_postgres_data/
 *.parquet
-*.csv
 *.tmp
 Week_3/Homework/data/
 homework_hash.py
@@ -17,3 +16,7 @@ dbt_packages/
 logs/
 # end dbt Cloud content
 Week_4/dbt_service_account_key.json
+Week_2/output.csv
+Week_4/green_tripdata_2019-07.csv/green_tripdata_2019-07.csv
+Week_4/yellow_tripdata_2019-01.csv/yellow_tripdata_2019-01.csv
+Week_4/yellow_tripdata_2019-04.csv/yellow_tripdata_2019-04.csv
