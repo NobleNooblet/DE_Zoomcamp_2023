@@ -1,0 +1,35 @@
+On dbt cloud 
+change the .yml file - change models name and project name to something else
+
+Create model
+crete yml for the model
+
+dbt run -m model name for specific model run
+or 
+dbt run to run all models 
+
+install packages by running
+dbt deps
+
+running variables:
+
+dbt run --select stg_green_tripdata --var 'is_test_run: false'
+
+Add csv file in the seed directory
+
+run dbt seed to create the table
+
+
+run everything for fact trips
+dbt build --select +fact_trips
+
+
+Create or replace external table `trips_data_all.yellow_tripdata`
+Options(
+  format = 'PARQUET',
+  uris=['gs://dtc_data_lake_dtc-de-course-375810/data/yellow/yellow_tripdata_*']
+);
+
+Create or replace table `trips_data_all.yellow_tripdata_2019_2020`
+ as
+    SELECT * FROM  `trips_data_all.yellow_tripdata`

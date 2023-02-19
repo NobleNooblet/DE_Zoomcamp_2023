@@ -16,3 +16,4 @@ target/
 dbt_packages/
 logs/
 # end dbt Cloud content
+Week_4/dbt_service_account_key.json

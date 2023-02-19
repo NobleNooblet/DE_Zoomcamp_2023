@@ -19,3 +19,14 @@ Select * from table
 cluster improves filter queries and aggregation queries
 
 dont cluster or partition on tables with low volumes
+
+
+Create or replace external table `trips_data_all.yellow_tripdata`
+Options(
+  format = 'PARQUET',
+  uris=['gs://dtc_data_lake_dtc-de-course-375810/data/yellow/yellow_tripdata_*']
+);
+
+Create or replace table `trips_data_all.yellow_tripdata_2019_2020`
+ as
+    SELECT * FROM  `trips_data_all.yellow_tripdata`
