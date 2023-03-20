@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: project_staging
+    database: dataengineeringproject-380415
+    schema: staging_project_data
+
+    tables:
+      - name: country_codes_optimized
+      - name: player_earnings_optimized
+      
