@@ -1,0 +1,4 @@
+Create or replace table `staging_project_data.country_codes_optimized`
+cluster by Continent_Name
+ as
+    SELECT * FROM  `staging_project_data.country_codes`

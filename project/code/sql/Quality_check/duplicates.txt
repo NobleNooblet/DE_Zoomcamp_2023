@@ -1,0 +1,3 @@
+select  count(Two_Letter_Country_Code),b.Country_Name from `dataengineeringproject-380415.staging_project_data.country_codes_optimized` b 
+group by b.Country_Name
+having count(Two_Letter_Country_Code) > 1

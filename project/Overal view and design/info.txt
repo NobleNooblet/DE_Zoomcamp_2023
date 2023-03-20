@@ -1,0 +1,55 @@
+CSV file URL:
+archive.zip
+    https://www.kaggle.com/datasets/jackdaoud/esports-earnings-for-players-teams-by-game?resource=download&select=country-and-continent-codes-list.csv
+
+    Files:
+        highest_earning_players
+        country-and-continect-codes-list
+    Files not used:
+        highest_earning_teams
+
+To download the dataset from Kaggle:
+    pip install kaggle
+
+    Download kaggle api key and make sure it's in ~/.kaggle/kaggle.json
+
+
+GCP:
+    Porject created: dataengineeringproject-380415
+    Service account created for terraform
+
+Terraform:
+    Created input, main and output.
+    Created a credential file for the service account user
+    Generates:
+        GCS bucket
+        BQ staging data set 
+        BQ production data set
+        
+
+
+
+Pipeline:
+
+    For Prefect:
+        Created a GCP credentials data block with my service account user datail  
+        Created a GCS block to use in the code
+        pip install 'prefect_gcp[cloud_storage]'
+
+    First task - fetch data:
+        1) Download kaggle dataset
+
+    Second task - convert data:
+        change highest_earning_players.csv CountryCode entries to upper cloud_storage
+
+    Third task - upload data to GCS
+
+    Upload to BQ:
+    1) pip install gcsfs
+    2) pip install pandas-gbq
+    3) gcs_to_gcbq.py
+        a) read gcs files into a df 
+        b) upload the df to gbq in the staging data set.
+
+    Optimize gbq data tables
+

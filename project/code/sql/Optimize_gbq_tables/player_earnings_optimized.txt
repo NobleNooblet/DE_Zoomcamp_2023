@@ -1,0 +1,4 @@
+Create or replace table `staging_project_data.player_earnings_optimized`
+cluster by game,genre
+ as
+    SELECT * FROM  `staging_project_data.player_earnings`
